@@ -22,11 +22,20 @@
                         'text-fade': 'fade 1.2s ease-out',
                         'spin-slow': 'spin 8s linear infinite',
                         'pulse-border': 'pulse 1.5s infinite',
+                        'whatsapp-glow': 'whatsapp-glow 2s infinite', // New animation
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'subtle-bounce': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        'pulse-opacity': {
+                            '0%, 100%': { opacity: '0.6' },
+                            '50%': { opacity: '1' }
                         },
                         fade: {
                             '0%': { opacity: '0', transform: 'translateY(10px)' },
@@ -39,6 +48,24 @@
                         glow: {
                             '0%, 100%': { 'box-shadow': '0 0 6px 0 rgba(255, 255, 255, 0)' },
                             '50%': { 'box-shadow': '0 0 10px 2px rgba(255, 255, 255, 0.3)' }
+                        },
+                        // New keyframes for WhatsApp glow effect
+                        'whatsapp-glow': {
+                            '0%': { 
+                                'box-shadow': '0 0 5px 0 rgba(37, 211, 102, 0.5), 
+                                               0 0 10px 0 rgba(37, 211, 102, 0.3)',
+                                'transform': 'scale(1)'
+                            },
+                            '50%': { 
+                                'box-shadow': '0 0 15px 5px rgba(37, 211, 102, 0.8), 
+                                              0 0 25px 10px rgba(37, 211, 102, 0.5)',
+                                'transform': 'scale(1.02)'
+                            },
+                            '100%': { 
+                                'box-shadow': '0 0 5px 0 rgba(37, 211, 102, 0.5), 
+                                               0 0 10px 0 rgba(37, 211, 102, 0.3)',
+                                'transform': 'scale(1)'
+                            }
                         }
                     }
                 }
@@ -55,7 +82,7 @@
             font-weight: 50;
             font-size: 1rem; /* Base font size increased */
         }
-                
+
         /* Increased font sizes throughout */
         h1, .h1 { font-size: 10.5rem; }
         h2, .h2 { font-size: 2.1rem; }
@@ -160,11 +187,29 @@
             opacity: 1;
         }
 
+        /* WhatsApp button glow effect */
+        .whatsapp-cta-button {
+            display: block;
+            width: 100%;
+            max-width: 18rem;
+            margin-left: auto;
+            margin-right: auto;
+            animation: whatsapp-glow 2s infinite;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .whatsapp-cta-button:hover {
+            animation: none;
+            box-shadow: 0 0 20px 5px rgba(37, 211, 102, 0.5);
+            transform: scale(1.03);
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 padding-top: 30vh;
             }
-                        
+            
             h1, .h1 { font-size: 3rem; }
             h2, .h2 { font-size: 1.8rem; }
             h3, .h3 { font-size: 1.5rem; }
@@ -186,16 +231,16 @@
     <nav class="fixed top-0 left-0 right-0 z-40 py-5 px-6 md:px-12">
         <div class="glass-card flex justify-between items-center py-3 px-6">
             <div class="flex items-center">
-                <img src="https://i.imgur.com/XwILBGq.png" alt="Logo" class="h-10">
+                <img src="https://i.imgur.com/XwILBGq.png" alt="Logo" class="h-10 opacity-100 hover:opacity-100 transition-opacity brightness-145">
             </div>
-                        
+            
             <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-6">
                 <a href="#work" class="text-gray-200 hover:text-white transition-colors text-xs">Portfólio</a>
                 <a href="#skills" class="text-gray-200 hover:text-white transition-colors text-xs">Serviços</a>
                 <a href="#about" class="text-gray-200 hover:text-white transition-colors text-xs">Sobre</a>
                 <a href="#cta-final" class="text-gray-200 hover:text-white transition-colors text-xs">Contato</a>
             </div>
-            
+
             <div class="flex space-x-4">
                 <a href="https://wa.me/5581988402872" class="glass-card rounded-full w-8 h-8 flex items-center justify-center">
                     <i class="fab fa-whatsapp text-white text-sm"></i>
@@ -205,7 +250,7 @@
                 </button>
             </div>
         </div>
-                
+        
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden glass-card mt-2 py-4 px-6 absolute left-0 right-0 mx-6">
             <div class="flex flex-col space-y-4 text-center">
@@ -227,27 +272,27 @@
             <source src="https://framerusercontent.com/assets/EUe5A6baeQNj2HEEKfw4xkaFKM.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 blur-overlay"></div>
-                
+        
         <div class="container mx-auto px-6 text-center hero-content relative z-30 flex items-center justify-center min-h-[80vh]">
             <div class="max-w-2xl mx-auto fade-in">
                 <!-- Added logo here -->
                 <div class="flex justify-center mb-0">
-                    <img src="https://i.imgur.com/gl9GfzS.png" 
-                         alt="Naico Motion" 
+                    <img src="https://i.imgur.com/gl9GfzS.png"
+                         alt="Naico Motion"
                          class="hero-logo mx-auto">
                 </div>
                 <p class="text-gray-300 mb-5 max-w-md mx-auto leading-relaxed">
                     Damos vida às suas ideias com edições de vídeo profissionais e motion graphics criativos que cativam e engajam seu público.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#work" class="glass-card py-2 px-6 rounded-full text-base font-medium hover:bg-opacity-80">Ver Portfólio</a>
-                    <a href="#cta-final" class="glass-card py-2 px-6 rounded-full text-base font-medium border border-white/20 hover:border-white/40">Fale Conosco →</a>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 mb-10">
+                    <a href="#work" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium hover:scale-[1.08] transition-transform duration-300 ease-out">Ver Portfólio</a>
+                    <a href="#cta-final" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 hover:scale-[1.08] transition-transform duration-300 ease-out">Fale Conosco</a>
                 </div>
             </div>
-                        
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-                <div class="animate-float">
-                    <i class="fas fa-chevron-down text-xl text-white/60"></i>
+            
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                <div class="animate-float group">
+                    <i class="fas fa-chevron-down text-xl text-white/60 animate-subtle-bounce animate-pulse-opacity animate-duration-[2s]"></i>
                 </div>
             </div>
         </div>
@@ -259,13 +304,13 @@
             <source src="https://framerusercontent.com/assets/d5iJwKvfwVJPQdjVGmBuIyAvME.mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/50 z-10"></div>
-                
+        
         <div class="container mx-auto px-6 relative z-20">
             <div class="text-center mb-16 fade-in">
                 <p class="text-white/80 uppercase tracking-widest mb-4">SOBRE NÓS</p>
                 <h2 class="h2 font-bold tracking-tight">NOSSA FILOSOFIA CRIATIVA</h2>
             </div>
-                        
+            
             <div class="max-w-3xl mx-auto glass-card p-8 md:p-12 fade-in">
                 <p class="text-gray-300 mb-6 leading-relaxed">
                     Em um mundo visualmente dinâmico, acreditamos no poder de vídeos e animações que se destacam pela clareza, impacto e narrativa envolvente.
@@ -283,13 +328,13 @@
     <!-- Work Section -->
     <section id="work" class="relative py-28">
         <div id="work-bg-video" class="section-video opacity-80"></div>
-                
+        
         <div class="container mx-auto px-6 relative z-20">
             <div class="text-center mb-20 fade-in">
                 <p class="text-white uppercase tracking-widest mb-6">PORTFÓLIO</p>
                 <h2 class="h2 font-bold">PROJETOS EM DESTAQUE</h2>
             </div>
-                        
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="fade-in delay-1">
@@ -297,35 +342,35 @@
                         <iframe src="https://player.vimeo.com/video/1086172380?h=7da5524b8c&background=1&autoplay=1&loop=1&muted=1" frameborder="0" class="w-full aspect-video"></iframe>
                     </div>
                 </div>
-                                
+                
                 <!-- Project 2 -->
                 <div class="fade-in delay-1">
                     <div class="glass-card project-tile overflow-hidden rounded-2xl">
                         <iframe src="https://player.vimeo.com/video/1086175266?h=8a0f605845&background=1&autoplay=1&loop=1&muted=1" frameborder="0" class="w-full aspect-video"></iframe>
                     </div>
                 </div>
-                                
+                
                 <!-- Project 3 -->
                 <div class="fade-in delay-2">
                     <div class="glass-card project-tile overflow-hidden rounded-2xl">
                         <iframe src="https://player.vimeo.com/video/1071605077?h=e241add5eb&background=1&autoplay=1&loop=1&muted=1" frameborder="0" class="w-full aspect-video"></iframe>
                     </div>
                 </div>
-                                
+                
                 <!-- Project 4 -->
                 <div class="fade-in delay-2">
                     <div class="glass-card project-tile overflow-hidden rounded-2xl">
                         <iframe src="https://player.vimeo.com/video/1086177770?h=297cf79930&background=1&autoplay=1&loop=1&muted=1" frameborder="0" class="w-full aspect-video"></iframe>
                     </div>
                 </div>
-                                
+                
                 <!-- Project 5 -->
                 <div class="fade-in delay-3">
                     <div class="glass-card project-tile overflow-hidden rounded-2xl">
                         <iframe src="https://player.vimeo.com/video/1086178476?h=ca9b8835da&background=1&autoplay=1&loop=1&muted=1" frameborder="0" class="w-full aspect-video"></iframe>
                     </div>
                 </div>
-                                
+                
                 <!-- Project 6 -->
                 <div class="fade-in delay-3">
                     <div class="glass-card project-tile overflow-hidden rounded-2xl">
@@ -342,40 +387,40 @@
             <source src="https://framerusercontent.com/assets/NquNOjdb3EXNgdng4qBz8hwdeg.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-b from-dark/95 to-dark/60 z-10"></div>
-                
+        
         <div class="container mx-auto px-6 relative z-20">
             <div class="text-center mb-20 fade-in">
                 <p class="text-white uppercase tracking-widest mb-6">NOSSOS SERVIÇOS</p>
                 <h2 class="h2 font-bold">SOLUÇÕES AUDIOVISUAIS</h2>
             </div>
-                        
+            
             <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
                 <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
                     <i class="fas fa-film text-4xl mb-4 text-white"></i>
                     <span class="font-medium">Edição de Vídeo</span>
                 </div>
-                                
+                
                 <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
                     <i class="fas fa-wand-magic-sparkles text-4xl mb-4 text-white"></i>
                     <span class="font-medium">Motion Graphics</span>
                 </div>
-                                
+                
                 <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
                     <i class="fas fa-cubes text-4xl mb-4 text-white"></i>
                     <span class="font-medium">Animação 2D/3D</span>
                 </div>
-                                
+                
                 <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
                     <i class="fas fa-palette text-4xl mb-4 text-white"></i>
                     <span class="font-medium">Color Grading</span>
                 </div>
-                                
+                
                 <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
                     <i class="fas fa-tasks text-4xl mb-4 text-white"></i>
                     <span class="font-medium">Pós-Produção</span>
                 </div>
             </div>
-                        
+            
             <div class="mt-16 max-w-3xl mx-auto glass-card p-8 fade-in">
                 <p class="text-center text-gray-300 font-medium">
                     Combinamos narrativa visual com expertise técnica para criar vídeos e animações que engajam, informam e elevam sua marca.
@@ -398,7 +443,7 @@
                     Pronto para dar o próximo passo e criar conteúdo audiovisual de impacto que realmente conecta com seu público?
                 </p>
             </div>
-                        
+            
             <div class="max-w-4xl mx-auto">
                 <div class="cta-glass-card glass-card p-10 md:p-14 fade-in">
                     <div class="flex justify-center mb-8">
@@ -408,8 +453,9 @@
                     <p class="text-gray-300 mb-8 text-center max-w-2xl mx-auto">
                         Tem uma ideia ou projeto em mente? Envie uma mensagem e vamos conversar sobre como podemos transformar suas ideias em vídeos incríveis.
                     </p>
+                    <!-- Added glow effect here -->
                     <a href="https://wa.me/5581988402872?text=Ol%C3%A1%2C+gostaria+de+falar+sobre+um+projeto+de+motion+design"
-                        class="glass-card block w-full max-w-md mx-auto py-4 px-8 rounded-full text-center text-lg font-medium hover:bg-opacity-80 transition-all duration-300">
+                       class="whatsapp-cta-button glass-card py-4 px-8 rounded-full text-center text-lg font-medium hover:bg-opacity-80 transition-all duration-300">
                         <i class="fab fa-whatsapp mr-3"></i> Conversar Agora
                     </a>
                 </div>
@@ -426,8 +472,7 @@
                     <span>© 2025 NAICO MOTION</span>
                     <span class="ml-1">Todos os Direitos Reservados</span>
                 </div>
-                                
-
+                
                 <!-- Right - Social Icons -->
                 <div class="flex space-x-3">
                     <a href="https://www.instagram.com/naicomotion" target="_blank" class="w-8 h-8 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
@@ -449,14 +494,14 @@
             // Mobile Menu Toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-                        
+            
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-                        
+            
             // Animation for fading in elements on scroll
             const fadeElements = document.querySelectorAll('.fade-in');
-                        
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -466,11 +511,11 @@
             }, {
                 threshold: 0.1
             });
-                        
+            
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
-                        
+            
             // Background video sequence for work section
             const workVideo = document.getElementById('work-bg-video');
             const videoSources = [
@@ -479,16 +524,16 @@
                 "https://framerusercontent.com/assets/69lMbPVpMMI98Sq9nrx2ls2O3o.mp4",
                 "https://framerusercontent.com/assets/C2j0aRNpKKRS0ABgNkUuf9V7IY.mp4"
             ];
-                        
+            
             let currentVideo = 0;
-                        
+            
             function changeWorkVideo() {
                 workVideo.innerHTML = `<source src="${videoSources[currentVideo]}" type="video/mp4">`;
                 workVideo.load();
-                                
+                
                 currentVideo = (currentVideo + 1) % videoSources.length;
             }
-                        
+            
             // Preload videos
             function preloadVideos() {
                 videoSources.forEach(src => {
@@ -496,23 +541,23 @@
                     video.src = src;
                 });
             }
-                        
+            
             setInterval(changeWorkVideo, 8000);
             preloadVideos();
             changeWorkVideo();
-                        
+            
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                                        
+                    
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
                         window.scrollTo({
                             top: target.offsetTop - 80,
                             behavior: 'smooth'
                         });
-                                                
+                        
                         // Close mobile menu if open
                         if (!mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');

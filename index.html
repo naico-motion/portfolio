@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naico Motion | Sua Marca em Movimento</title>
+
+    <link rel="icon" type="image/png" href="https://i.imgur.com/59xl3yQ.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,9 +27,10 @@
                         'spin-slow': 'spin 8s linear infinite',
                         'pulse-border': 'pulse 1.5s infinite',
                         'spin-glow': 'spin-glow 3s linear infinite',
-                        
-                        /* -- NOVA ANIMAÇÃO ADICIONADA -- */
                         'sheen': 'sheen 5s ease-in-out infinite', 
+                        
+                        /* -- VELOCIDADE DA BARRA AJUSTADA -- */
+                        'marquee': 'marquee 30s linear infinite', 
                     },
                     keyframes: {
                         float: {
@@ -57,15 +61,15 @@
                             '0%': { transform: 'rotate(0deg)' },
                             '100%': { transform: 'rotate(360deg)' }
                         },
-
-                        /* -- NOVO KEYFRAME ADICIONADO -- */
                         'sheen': {
                             '0%, 100%': { 'background-position': '0% 50%' },
                             '50%': { 'background-position': '100% 50%' }
+                        },
+                        'marquee': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' }
                         }
                     },
-
-                    /* -- NOVAS PROPRIEDADES ADICIONADAS -- */
                     backgroundImage: {
                         'sheen-gradient': 'radial-gradient(circle at 20% 20%, rgba(37, 211, 102, 0.35), rgba(255, 255, 255, 0.15) 40%, rgba(25, 25, 28, 0.3) 70%)',
                     },
@@ -104,13 +108,20 @@
         }
 
         .glass-card {
-            /* O background será sobrescrito pelo bg-sheen-gradient no botão */
             background: rgba(25, 25, 28, 0.35); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 20px;
             transition: all 0.4s ease;
+        }
+        
+        .logo-bar-glass {
+            background: rgba(25, 25, 28, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .glass-card:hover {
@@ -191,9 +202,9 @@
             opacity: 1;
         }
 
-        /* ESTILOS DO BOTÃO WHATSAPP ATUALIZADOS */
+        /* ESTILOS DO BOTÃO WHATSAPP */
         .whatsapp-cta-button {
-            position: relative; /* Container para o brilho */
+            position: relative;
             display: block;
             width: 100%;
             max-width: 18rem;
@@ -201,15 +212,14 @@
             margin-right: auto;
             z-index: 1;
             transition: all 0.3s ease;
-            border-radius: 9999px; /* rounded-full */
-            overflow: hidden; /* Garante que o brilho não vaze */
+            border-radius: 9999px; 
+            overflow: hidden; 
         }
         
-        /* O BRILHO GIRATÓRIO */
         .whatsapp-cta-button::before {
             content: '';
             position: absolute;
-            z-index: -1; /* Fica atrás do botão */
+            z-index: -1; 
             top: -2px; 
             left: -2px;
             right: -2px;
@@ -224,7 +234,6 @@
             border-radius: inherit; 
         }
 
-        /* Hack para o backdrop-filter funcionar no span interno no Safari */
         .whatsapp-cta-button > span {
             -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
@@ -296,9 +305,8 @@
     </nav>
 
     <section id="hero" class="relative min-h-screen flex items-center">
-        <video autoplay muted loop playsinline class="section-video">
-            <source src="https://framerusercontent.com/assets/EUe5A6baeQNj2HEEKfw4xkaFKM.mp4" type="video/mp4">
-        </video>
+        <video autoplay muted loop playsinline class="section-video" id="hero-bg-video">
+            </video>
         <div class="absolute inset-0 blur-overlay"></div>
         
         <div class="container mx-auto px-6 text-center hero-content relative z-30 flex items-center justify-center min-h-[80vh]">
@@ -325,6 +333,31 @@
         </div>
     </section>
 
+    <section class="relative logo-bar-glass py-8 overflow-hidden">
+        <div class="flex animate-marquee">
+            <div class="flex-shrink-0 flex items-center justify-around min-w-full">
+                <img src="https://i.imgur.com/v3H6zCY.png" alt="BMW Financial Services" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/9XPYIUA.png" alt="Grupo Saint Gobain" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/ToLHr03.png" alt="Asics" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/n0WOxos.png" alt="Probiótica" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/ollPuVh.png" alt="Roval" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/3eVquwY.png" alt="Grupo JCF" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/s0AnZJh.png" alt="Summerville" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/nYD8xa1.png" alt="Colégio Mackenzie" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+            
+            <div class="flex-shrink-0 flex items-center justify-around min-w-full" aria-hidden="true">
+                <img src="https://i.imgur.com/v3H6zCY.png" alt="BMW Financial Services" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/9XPYIUA.png" alt="Grupo Saint Gobain" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/ToLHr03.png" alt="Asics" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/n0WOxos.png" alt="Probiótica" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/ollPuVh.png" alt="Roval" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/3eVquwY.png" alt="Grupo JCF" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/s0AnZJh.png" alt="Summerville" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://i.imgur.com/nYD8xa1.png" alt="Colégio Mackenzie" class="max-h-10 md:max-h-12 w-auto mx-8 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </section>
     <section id="about" class="relative py-24">
         <video autoplay muted loop playsinline class="section-video">
             <source src="https://framerusercontent.com/assets/d5iJwKvfwVJPQdjVGmBuIyAvME.mp4">
@@ -475,7 +508,7 @@
                         Tem uma ideia ou projeto em mente? Envie uma mensagem e vamos conversar sobre como podemos transformar suas ideias em vídeos incríveis.
                     </p>
                     
-                    <a href="https://wa.me/5581988402872?text=Ol%C3%81%C2%A0+gostaria+de+falar+sobre+um+projeto+de+motion+design"
+                    <a href="https://wa.me/5581988402872?text=Ol%C3%81%C2%A+gostaria+de+falar+sobre+um+projeto+de+motion+design"
                        class="whatsapp-cta-button text-center text-lg font-medium transition-all duration-300">
                         <span class="glass-card bg-sheen-gradient bg-300 animate-sheen w-full h-full flex items-center justify-center py-4 px-8 rounded-full z-10 relative">
                             <i class="fab fa-whatsapp mr-3"></i> Conversar Agora
@@ -491,6 +524,7 @@
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="text-white/70 mb-4 md:mb-0 text-[10px]">
                     <span>™ 2025 NAICO MOTION</span>
+                    <span class="ml-1">Todos os Direitos Reservados</span>
                 </div>
                 
                 <div class="flex space-x-3">
@@ -535,21 +569,32 @@
                 fadeObserver.observe(element);
             });
             
-            // Background video sequence for work section
-            const workVideo = document.getElementById('work-bg-video');
+            
+            /* -- SCRIPT DE VÍDEO DO HERO -- */
+            const heroVideo = document.getElementById('hero-bg-video'); 
+            
+            /* -- LISTA DE VÍDEOS REORDENADA AQUI -- */
             const videoSources = [
-                "https://framerusercontent.com/assets/Rr9LM2dEwdA1KwReQLgHzKOMEKI.mp4",
-                "https://framerusercontent.com/assets/nn7BdQB7IbuQCvloC9jwaHlcTzE.mp4",
-                "https://framerusercontent.com/assets/69lMbPVpMMI98Sq9nrx2ls2O3o.mp4",
-                "https://framerusercontent.com/assets/C2j0aRNpKKRS0ABgNkUuf9V7IY.mp4"
+                "https://framerusercontent.com/assets/cFA9EF3QzF4qkBgjbHCPSRqcY.mp4", // NOVO PRIMEIRO VÍDEO
+                "https://framerusercontent.com/assets/ASyj12mAhOJU42ktpPPlFukupSo.mp4",
+                "https://framerusercontent.com/assets/sIhWYNiRpzKLtuhnyf4YsuzvHE.mp4",
+                "https://framerusercontent.com/assets/otn3R8yw0SuliKaUwJP2XG2iUs.mp4",
+                "https://framerusercontent.com/assets/P5iOKxtFvHIWDAdyZBK3DCaR0.mp4",
+                "https://framerusercontent.com/assets/khKz5zryadgo2GRU1puV9yYDt8k.mp4", 
+                "https://framerusercontent.com/assets/SrNU26AZXhIm7iT6B79g5WlMg.mp4",
+                "https://framerusercontent.com/assets/y153slcw2dYjmBA49ikvkD30U.mp4",
+                "https://framerusercontent.com/assets/xA5P52LrIBtYyn6kczAQl56jBQ.mp4",
+                "https://framerusercontent.com/assets/wyPzkhySZUqyIzDkt0aJwCZj00.mp4", 
+                "https://framerusercontent.com/assets/2NVjmndAq5NONdmjgkRG3VRtm4.mp4",
+                "https://framerusercontent.com/assets/PsQV2QPmKUJmNqf5lyHrOSWDM.mp4"
             ];
             
             let currentVideo = 0;
             
-            function changeWorkVideo() {
-                if (workVideo) { 
-                    workVideo.innerHTML = `<source src="${videoSources[currentVideo]}" type="video/mp4">`;
-                    workVideo.load();
+            function changeHeroVideo() { 
+                if (heroVideo) { 
+                    heroVideo.innerHTML = `<source src="${videoSources[currentVideo]}" type="video/mp4">`;
+                    heroVideo.load();
                     currentVideo = (currentVideo + 1) % videoSources.length;
                 }
             }
@@ -561,10 +606,10 @@
                 });
             }
             
-            if (workVideo) { 
-                setInterval(changeWorkVideo, 8000);
+            if (heroVideo) { 
+                setInterval(changeHeroVideo, 8000); 
                 preloadVideos();
-                changeWorkVideo();
+                changeHeroVideo(); 
             }
             
             // Smooth scrolling for anchor links

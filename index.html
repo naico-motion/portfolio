@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -135,6 +134,8 @@
         .project-tile {
             transform: scale(1);
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            /* Fundo escuro enquanto o iframe carrega */
+            background-color: #0f0f12; 
         }
 
         .project-tile:hover {
@@ -186,10 +187,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             transition: all 0.4s ease;
-        }
-
-        .whatsapp-card {
-            border: 1px solid rgba(37, 211, 102, 0.3);
         }
         
         .hero-logo {
@@ -306,224 +303,223 @@
         </div>
     </nav>
 
-    <section id="hero" class="relative min-h-screen flex items-center">
-        <video autoplay muted loop playsinline class="section-video" id="hero-bg-video">
-        </video>
-        <div class="absolute inset-0 blur-overlay"></div>
-        
-        <div class="container mx-auto px-6 text-center hero-content relative z-30 flex items-center justify-center min-h-[80vh]">
-            <div class="max-w-2xl mx-auto fade-in">
-                <div class="flex justify-center mb-0">
-                    <img src="https://i.imgur.com/gl9GfzS.png"
-                         alt="Logo Naico Motion"
-                         width="320" height="92"
-                         fetchpriority="high"
-                         class="hero-logo mx-auto">
-                </div>
-                <p class="text-gray-300 mb-5 max-w-md mx-auto leading-relaxed">
-                    Damos vida às suas ideias com edições de vídeo profissionais e motion graphics criativos que cativam e engajam seu público.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-3 mb-10">
-                    <a href="#work" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium hover:scale-[1.08] transition-transform duration-300 ease-out">Ver Portfólio</a>
-                    <a href="#cta-final" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 hover:scale-[1.08] transition-transform duration-300 ease-out">Fale Conosco</a>
-                </div>
-            </div>
+    <main>
+        <section id="hero" class="relative min-h-screen flex items-center">
+            <video autoplay muted loop playsinline class="section-video" id="hero-bg-video"></video>
+            <div class="absolute inset-0 blur-overlay"></div>
             
-            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-                <div class="animate-float group">
-                    <i class="fas fa-chevron-down text-xl text-white/60 animate-subtle-bounce animate-pulse-opacity animate-duration-[2s]" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="relative logo-bar-glass py-30 overflow-hidden">
-        <div class="flex animate-marquee">
-            <div class="flex-shrink-0 flex items-center justify-around min-w-full">
-                <img src="https://i.imgur.com/oRM0Rst.png" alt="BMW Financial Services" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/PWP7O8y.png" alt="Grupo Saint Gobain" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/3jW4vrL.png" alt="Asics" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/wF9O1AF.png" alt="Probiótica" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/7vRG1uP.png" alt="Roval" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/PBmWeFy.png" alt="Grupo JCF" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/zFkIud6.png" alt="Summerville" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/vGYqPga.png" alt="Colégio Mackenzie" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-            </div>
-            
-            <div class="flex-shrink-0 flex items-center justify-around min-w-full" aria-hidden="true">
-                <img src="https://i.imgur.com/oRM0Rst.png" alt="BMW Financial Services" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/PWP7O8y.png" alt="Grupo Saint Gobain" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/3jW4vrL.png" alt="Asics" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/wF9O1AF.png" alt="Probiótica" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/7vRG1uP.png" alt="Roval" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/PBmWeFy.png" alt="Grupo JCF" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/zFkIud6.png" alt="Summerville" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-                <img src="https://i.imgur.com/vGYqPga.png" alt="Colégio Mackenzie" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="relative py-24">
-        <video autoplay muted loop playsinline class="section-video" loading="lazy">
-            <source src="https://framerusercontent.com/assets/d5iJwKvfwVJPQdjVGmBuIyAvME.mp4">
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/50 z-10"></div>
-        
-        <div class="container mx-auto px-6 relative z-20">
-            <div class="text-center mb-16 fade-in">
-                <p class="text-white/80 uppercase tracking-widest mb-4">SOBRE NÓS</p>
-                <h2 class="h2 font-bold tracking-tight">NOSSA FILOSOFIA CRIATIVA</h2>
-            </div>
-            
-            <div class="max-w-3xl mx-auto glass-card p-8 md:p-12 fade-in">
-                <p class="text-gray-300 mb-6 leading-relaxed">
-                    Em um mundo visualmente dinâmico, acreditamos no poder de vídeos e animações que se destacam pela clareza, impacto e narrativa envolvente.
-                </p>
-                <p class="text-gray-300 mb-6 leading-relaxed">
-                    Cada corte, transição, cor e efeito sonoro é pensado estrategicamente para evocar emoção, comunicar sua mensagem de forma eficaz e conectar-se autenticamente com o público.
-                </p>
-                <p class="text-gray-300 leading-relaxed">
-                    Nosso processo une as mais recentes ferramentas de edição e motion design com uma paixão por storytelling, criando peças audiovisuais que são inovadoras, memoráveis e profundamente alinhadas com a identidade da sua marca.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="relative py-28">
-        <div id="work-bg-video" class="section-video opacity-80"></div>
-        
-        <div class="container mx-auto px-6 relative z-20">
-            <div class="text-center mb-20 fade-in">
-                <p class="text-white uppercase tracking-widest mb-6">PORTFÓLIO</p>
-                <h2 class="h2 font-bold">PROJETOS EM DESTAQUE</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="fade-in delay-1">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1086172380?h=7da5524b8c&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 1" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
+            <div class="container mx-auto px-6 text-center hero-content relative z-30 flex items-center justify-center min-h-[80vh]">
+                <div class="max-w-2xl mx-auto fade-in">
+                    <div class="flex justify-center mb-0">
+                        <img src="https://i.imgur.com/gl9GfzS.png"
+                             alt="Logo Naico Motion"
+                             width="320" height="92"
+                             fetchpriority="high"
+                             class="hero-logo mx-auto">
                     </div>
-                </div>
-                
-                <div class="fade-in delay-1">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1086175266?h=8a0f605845&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 2" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
-                    </div>
-                </div>
-                
-                <div class="fade-in delay-2">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1071605077?h=e241add5eb&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 3" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
-                    </div>
-                </div>
-                
-                <div class="fade-in delay-2">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1086177770?h=297cf79930&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 4" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
-                    </div>
-                </div>
-                
-                <div class="fade-in delay-3">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1086178476?h=ca9b8835da&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 5" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
-                    </div>
-                </div>
-                
-                <div class="fade-in delay-3">
-                    <div class="glass-card project-tile overflow-hidden rounded-2xl">
-                        <iframe src="https://player.vimeo.com/video/1086178714?h=ee07c3c5e3&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 6" loading="lazy" frameborder="0" class="w-full aspect-video"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fade-in delay-4 flex justify-center mt-10">
-                <a href="https://behance.net/naicomotion" target="_blank" aria-label="Acessar Behance completo" class="glass-card py-3 px-6 rounded-full flex items-center space-x-2 hover:bg-white/10 transition-colors">
-                    <i class="fab fa-behance text-xl" aria-hidden="true"></i>
-                    <span>Portfólio Completo</span>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="skills" class="relative py-28">
-        <video autoplay muted loop playsinline loading="lazy" class="section-video opacity-80">
-            <source src="https://framerusercontent.com/assets/NquNOjdb3EXNgdng4qBz8hwdeg.mp4" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-dark/95 to-dark/60 z-10"></div>
-        
-        <div class="container mx-auto px-6 relative z-20">
-            <div class="text-center mb-20 fade-in">
-                <p class="text-white uppercase tracking-widest mb-6">NOSSOS SERVIÇOS</p>
-                <h2 class="h2 font-bold">SOLUÇÕES AUDIOVISUAIS</h2>
-            </div>
-            
-            <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-                <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
-                    <i class="fas fa-film text-4xl mb-4 text-white" aria-hidden="true"></i>
-                    <span class="font-medium">Edição de Vídeo</span>
-                </div>
-                <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
-                    <i class="fas fa-wand-magic-sparkles text-4xl mb-4 text-white" aria-hidden="true"></i>
-                    <span class="font-medium">Motion Graphics</span>
-                </div>
-                <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
-                    <i class="fas fa-cubes text-4xl mb-4 text-white" aria-hidden="true"></i>
-                    <span class="font-medium">Animação 2D/3D</span>
-                </div>
-                <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
-                    <i class="fas fa-palette text-4xl mb-4 text-white" aria-hidden="true"></i>
-                    <span class="font-medium">Color Grading</span>
-                </div>
-                <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
-                    <i class="fas fa-tasks text-4xl mb-4 text-white" aria-hidden="true"></i>
-                    <span class="font-medium">Pós-Produção</span>
-                </div>
-            </div>
-            
-            <div class="mt-16 max-w-3xl mx-auto glass-card p-8 fade-in">
-                <p class="text-center text-gray-300 font-medium">
-                    Combinamos narrativa visual com expertise técnica para criar vídeos e animações que engajam, informam e elevam sua marca.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cta-final" class="relative py-28 px-6">
-        <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-black z-10"></div>
-        <div class="absolute inset-0 z-0 flex items-center justify-center">
-            <div class="bg-gradient-to-r from-transparent via-white/5 to-transparent w-96 h-96 rounded-full blur-[150px]"></div>
-        </div>
-        
-        <div class="container mx-auto relative z-20">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="h2 font-bold mb-6 tracking-tight">TRANSFORME SUAS IDEIAS EM VÍDEO</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">
-                    Pronto para dar o próximo passo e criar conteúdo audiovisual de impacto que realmente conecta com seu público?
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <div class="cta-glass-card glass-card p-10 md:p-14 fade-in">
-                    <div class="flex justify-center mb-8">
-                        <i class="fab fa-whatsapp text-5xl text-white" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="h3 font-bold text-center mb-6">Fale Conosco via WhatsApp</h3>
-                    <p class="text-gray-300 mb-8 text-center max-w-2xl mx-auto">
-                        Tem uma ideia ou projeto em mente? Envie uma mensagem e vamos conversar sobre como podemos transformar suas ideias em vídeos incríveis.
+                    <p class="text-gray-300 mb-5 max-w-md mx-auto leading-relaxed">
+                        Damos vida às suas ideias com edições de vídeo profissionais e motion graphics criativos que cativam e engajam seu público.
                     </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-3 mb-10">
+                        <a href="#work" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium hover:scale-[1.08] transition-transform duration-300 ease-out">Ver Portfólio</a>
+                        <a href="#cta-final" class="glass-card py-1.5 px-4 rounded-full text-sm font-medium border border-white/20 hover:border-white/40 hover:scale-[1.08] transition-transform duration-300 ease-out">Fale Conosco</a>
+                    </div>
+                </div>
+                
+                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                    <div class="animate-float group">
+                        <i class="fas fa-chevron-down text-xl text-white/60 animate-subtle-bounce animate-pulse-opacity animate-duration-[2s]" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative logo-bar-glass py-30 overflow-hidden">
+            <div class="flex animate-marquee">
+                <div class="flex-shrink-0 flex items-center justify-around min-w-full">
+                    <img src="https://i.imgur.com/oRM0Rst.png" alt="BMW Financial Services" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/PWP7O8y.png" alt="Grupo Saint Gobain" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/3jW4vrL.png" alt="Asics" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/wF9O1AF.png" alt="Probiótica" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/7vRG1uP.png" alt="Roval" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/PBmWeFy.png" alt="Grupo JCF" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/zFkIud6.png" alt="Summerville" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/vGYqPga.png" alt="Colégio Mackenzie" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+                
+                <div class="flex-shrink-0 flex items-center justify-around min-w-full" aria-hidden="true">
+                    <img src="https://i.imgur.com/oRM0Rst.png" alt="BMW Financial Services" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/PWP7O8y.png" alt="Grupo Saint Gobain" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/3jW4vrL.png" alt="Asics" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/wF9O1AF.png" alt="Probiótica" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/7vRG1uP.png" alt="Roval" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/PBmWeFy.png" alt="Grupo JCF" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/zFkIud6.png" alt="Summerville" width="228" height="128" loading="lazy" class="w-auto max-h-24 md:max-h-32 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://i.imgur.com/vGYqPga.png" alt="Colégio Mackenzie" width="199" height="112" loading="lazy" class="w-auto max-h-20 md:max-h-28 mx-6 md:mx-10 filter grayscale brightness(0) invert(1) opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="relative py-24">
+            <video autoplay muted loop playsinline class="section-video" loading="lazy">
+                <source src="https://framerusercontent.com/assets/d5iJwKvfwVJPQdjVGmBuIyAvME.mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark/50 z-10"></div>
+            
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="text-center mb-16 fade-in">
+                    <p class="text-white/80 uppercase tracking-widest mb-4">SOBRE NÓS</p>
+                    <h2 class="h2 font-bold tracking-tight">NOSSA FILOSOFIA CRIATIVA</h2>
+                </div>
+                
+                <div class="max-w-3xl mx-auto glass-card p-8 md:p-12 fade-in">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Em um mundo visualmente dinâmico, acreditamos no poder de vídeos e animações que se destacam pela clareza, impacto e narrativa envolvente.
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Cada corte, transição, cor e efeito sonoro é pensado estrategicamente para evocar emoção, comunicar sua mensagem de forma eficaz e conectar-se autenticamente com o público.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Nosso processo une as mais recentes ferramentas de edição e motion design com uma paixão por storytelling, criando peças audiovisuais que são inovadoras, memoráveis e profundamente alinhadas com a identidade da sua marca.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="relative py-28">
+            <div id="work-bg-video" class="section-video opacity-80"></div>
+            
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="text-center mb-20 fade-in">
+                    <p class="text-white uppercase tracking-widest mb-6">PORTFÓLIO</p>
+                    <h2 class="h2 font-bold">PROJETOS EM DESTAQUE</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="fade-in delay-1">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1086172380?h=7da5524b8c&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 1" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
                     
-                    <a href="https://wa.me/5581988402872?text=Oi!+Gostaria+de+falar+sobre+um+projeto+de+motion+design"
-                       class="whatsapp-cta-button text-center text-lg font-medium transition-all duration-300" aria-label="Conversar pelo WhatsApp agora">
-                        <span class="glass-card bg-sheen-gradient bg-300 animate-sheen w-full h-full flex items-center justify-center py-4 px-8 rounded-full z-10 relative">
-                            <i class="fab fa-whatsapp mr-3" aria-hidden="true"></i> Conversar Agora
-                        </span>
+                    <div class="fade-in delay-1">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1086175266?h=8a0f605845&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 2" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in delay-2">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1071605077?h=e241add5eb&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 3" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in delay-2">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1086177770?h=297cf79930&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 4" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in delay-3">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1086178476?h=ca9b8835da&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 5" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in delay-3">
+                        <div class="glass-card project-tile overflow-hidden rounded-2xl">
+                            <iframe data-src="https://player.vimeo.com/video/1086178714?h=ee07c3c5e3&background=1&autoplay=1&loop=1&muted=1" title="Projeto de Motion Design 6" frameborder="0" class="lazy-vimeo w-full aspect-video"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in delay-4 flex justify-center mt-10">
+                    <a href="https://behance.net/naicomotion" target="_blank" aria-label="Acessar Behance completo" class="glass-card py-3 px-6 rounded-full flex items-center space-x-2 hover:bg-white/10 transition-colors">
+                        <i class="fab fa-behance text-xl" aria-hidden="true"></i>
+                        <span>Portfólio Completo</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section id="skills" class="relative py-28">
+            <video autoplay muted loop playsinline loading="lazy" class="section-video opacity-80">
+                <source src="https://framerusercontent.com/assets/NquNOjdb3EXNgdng4qBz8hwdeg.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/95 to-dark/60 z-10"></div>
+            
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="text-center mb-20 fade-in">
+                    <p class="text-white uppercase tracking-widest mb-6">NOSSOS SERVIÇOS</p>
+                    <h2 class="h2 font-bold">SOLUÇÕES AUDIOVISUAIS</h2>
+                </div>
+                
+                <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                    <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
+                        <i class="fas fa-film text-4xl mb-4 text-white" aria-hidden="true"></i>
+                        <span class="font-medium">Edição de Vídeo</span>
+                    </div>
+                    <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
+                        <i class="fas fa-wand-magic-sparkles text-4xl mb-4 text-white" aria-hidden="true"></i>
+                        <span class="font-medium">Motion Graphics</span>
+                    </div>
+                    <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
+                        <i class="fas fa-cubes text-4xl mb-4 text-white" aria-hidden="true"></i>
+                        <span class="font-medium">Animação 2D/3D</span>
+                    </div>
+                    <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
+                        <i class="fas fa-palette text-4xl mb-4 text-white" aria-hidden="true"></i>
+                        <span class="font-medium">Color Grading</span>
+                    </div>
+                    <div class="glass-card skill-icon flex flex-col items-center justify-center p-6">
+                        <i class="fas fa-tasks text-4xl mb-4 text-white" aria-hidden="true"></i>
+                        <span class="font-medium">Pós-Produção</span>
+                    </div>
+                </div>
+                
+                <div class="mt-16 max-w-3xl mx-auto glass-card p-8 fade-in">
+                    <p class="text-center text-gray-300 font-medium">
+                        Combinamos narrativa visual com expertise técnica para criar vídeos e animações que engajam, informam e elevam sua marca.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-final" class="relative py-28 px-6">
+            <div class="absolute inset-0 bg-gradient-to-br from-dark/90 to-black z-10"></div>
+            <div class="absolute inset-0 z-0 flex items-center justify-center">
+                <div class="bg-gradient-to-r from-transparent via-white/5 to-transparent w-96 h-96 rounded-full blur-[150px]"></div>
+            </div>
+            
+            <div class="container mx-auto relative z-20">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="h2 font-bold mb-6 tracking-tight">TRANSFORME SUAS IDEIAS EM VÍDEO</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Pronto para dar o próximo passo e criar conteúdo audiovisual de impacto que realmente conecta com seu público?
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="cta-glass-card glass-card p-10 md:p-14 fade-in">
+                        <div class="flex justify-center mb-8">
+                            <i class="fab fa-whatsapp text-5xl text-white" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="h3 font-bold text-center mb-6">Fale Conosco via WhatsApp</h3>
+                        <p class="text-gray-300 mb-8 text-center max-w-2xl mx-auto">
+                            Tem uma ideia ou projeto em mente? Envie uma mensagem e vamos conversar sobre como podemos transformar suas ideias em vídeos incríveis.
+                        </p>
+                        
+                        <a href="https://wa.me/5581988402872?text=Oi!+Gostaria+de+falar+sobre+um+projeto+de+motion+design"
+                           class="whatsapp-cta-button text-center text-lg font-medium transition-all duration-300" aria-label="Conversar pelo WhatsApp agora">
+                            <span class="glass-card bg-sheen-gradient bg-300 animate-sheen w-full h-full flex items-center justify-center py-4 px-8 rounded-full z-10 relative">
+                                <i class="fab fa-whatsapp mr-3" aria-hidden="true"></i> Conversar Agora
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="bg-black py-14 relative z-20">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between">
@@ -574,6 +570,27 @@
                 fadeObserver.observe(element);
             });
             
+            /* -- NOVO: OBSERVADOR PARA OS IFRAMES DO VIMEO -- */
+            const lazyVimeoIframes = document.querySelectorAll('.lazy-vimeo');
+            
+            const vimeoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        // Troca o data-src pelo src real apenas quando o vídeo aparece na tela
+                        iframe.src = iframe.getAttribute('data-src');
+                        iframe.classList.remove('lazy-vimeo');
+                        observer.unobserve(iframe); // Para de observar após carregar
+                    }
+                });
+            }, { 
+                rootMargin: '300px 0px' // Começa a carregar 300px antes do vídeo aparecer na tela
+            });
+
+            lazyVimeoIframes.forEach(iframe => {
+                vimeoObserver.observe(iframe);
+            });
+            
             
             /* -- SCRIPT DE VÍDEO DO HERO -- */
             const heroVideo = document.getElementById('hero-bg-video'); 
@@ -603,12 +620,8 @@
                 }
             }
             
-            /* Melhoria Crítica de Performance: Função preloadVideos anterior foi REMOVIDA. 
-               Ela forçava o navegador a baixar ~46MB de vídeo no instante que o site abria. 
-               Agora o navegador vai baixar o vídeo sob demanda apenas quando chegar o tempo do intervalo. */
-            
             if (heroVideo) { 
-                changeHeroVideo(); // Chama o primeiro vídeo
+                changeHeroVideo(); 
                 setInterval(changeHeroVideo, 8000); 
             }
             
